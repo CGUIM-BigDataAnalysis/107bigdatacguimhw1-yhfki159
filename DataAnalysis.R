@@ -1,2 +1,73 @@
+#載入package
 library(jsonlite)
 library(dplyr)
+library(readr)
+#read
+X103Initial_salary <- read_csv("A17000000J-020066-Qod/103Initial salary.csv")
+View(X103Initial_salary)#view
+X104Initial_salary <- read_csv("A17000000J-020066-Qod/104Initial salary.csv")
+View(X104Initial_salary)#view
+X105Initial_salary <- read_csv("A17000000J-020066-Qod/105Initial salary.csv")
+View(X105Initial_salary)#view
+X106Initial_salary <- read_csv("A17000000J-020066-Qod/106Initial salary.csv")
+View(X106Initial_salary)#view
+#join
+join103_106<-inner_join(X103Initial_salary,X106Initial_salary,by="大職業別")
+View(join103_106)#view
+#gsub+轉num
+#X103Initial_salary1<-gsub("—|…","",X103Initial_salary)
+join103_106$`大學-薪資.x`<-gsub("—|…","",join103_106$`大學-薪資.x`)
+join103_106$`大學-薪資.x`<-as.numeric(join103_106$`大學-薪資.x`)
+join103_106$`大學-薪資.y`<-gsub("—|…","",join103_106$`大學-薪資.y`)
+join103_106$`大學-薪資.y`<-as.numeric(join103_106$`大學-薪資.y`)
+#新增欄位成長比例
+join103_106$`成長比例`<-(join103_106$`大學-薪資.y`/join103_106$`大學-薪資.x`)
+join103_106_arrange<-arrange(join103_106,desc(`成長比例`))
+#filter(成長比例>1.05)
+result<-filter(join103_106_arrange,`成長比例`>1.05)
+View(result)#view
+#job找出"-"
+job<-strsplit(result$大職業別,"-")
+View(job)#view
+#出現"-"的前面字串統計
+#job[[1:lengths(job)]][1]#error
+tmp <- lapply(job, "[", 1)
+tmp2<-unlist(tmp)
+table(tmp2)
+################################################
+#join103~106
+join103to106<-rbind(X103Initial_salary,X104Initial_salary)
+join103to106<-rbind(join103to106,X105Initial_salary)
+join103to106<-rbind(join103to106,X106Initial_salary)
+View(join103to106)#view
+#gsub+轉num
+join103to106$`大學-女/男`<-gsub("—|…","",join103to106$`大學-女/男`)
+join103to106$`大學-女/男`<-as.numeric(join103to106$`大學-女/男`)
+#arrange(join103to106)其中女/男<100
+x103to106<-arrange(join103to106,`大學-女/男`)
+View(x103to106)
+x103to106desc<-arrange(join103to106,desc(`大學-女/男`))
+#head(10)
+view1<-head(x103to106,10)#男生薪資比女生薪資多，前十筆
+View(view1)
+view2<-head(x103to106desc,10)#女生薪資比男生薪資多，前十筆
+View(view2)
+################################################
+View(X106Initial_salary)#view
+X106Initial_salary$`研究所及以上-薪資`<-gsub("—|…","",X106Initial_salary$`研究所及以上-薪資`)
+X106Initial_salary$`研究所及以上-薪資`<-as.numeric(X106Initial_salary$`研究所及以上-薪資`)
+X106Initial_salary$`大學-薪資`<-gsub("—|…","",X106Initial_salary$`大學-薪資`)
+X106Initial_salary$`大學-薪資`<-as.numeric(X106Initial_salary$`大學-薪資`)
+X106Initial_salary$salaryRate<-(X106Initial_salary$`研究所及以上-薪資`/X106Initial_salary$`大學-薪資`)
+salaryRate_arrange<-arrange(X106Initial_salary,desc(salaryRate))#大到小
+salaryRateTop10<-head(salaryRate_arrange,10)#前十大
+View(salaryRateTop10)#view
+################################################
+#選職業別#用106分析
+#128	藝術_娛樂及休閒服務業-專業人員 #72 	住宿及餐飲業-專業人員 #130 藝術_娛樂及休閒服務業-事務支援人員
+X106Initial_salary$`研究所及以上-薪資`
+X106Initial_salary$`大學-薪資`
+
+#差不多跟我想的一樣
+#128->1700 #72->2000 #130->-300
+#感覺差不了多少，可是有沒有念研究所還是有差的，能多學一點是一點，哪知道何時會用上呢?!競爭力也能上升~!
