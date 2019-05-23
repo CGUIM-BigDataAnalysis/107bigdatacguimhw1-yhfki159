@@ -114,7 +114,18 @@ View(salaryRateTop10)#view
 
 ### 有興趣的職業別篩選，呈現薪資
 ```{r like}
-#這是R Code Chunk
+#選職業別#用106分析
+X106Initial_salary <- read_csv("A17000000J-020066-Qod/106Initial salary.csv")
+View(X106Initial_salary)#view
+#128	藝術_娛樂及休閒服務業-專業人員 #72 	住宿及餐飲業-專業人員 #130 藝術_娛樂及休閒服務業-事務支援人員
+want<-c(128,72,130)
+X106Initial_salary$大職業別
+X106Initial_salary$`大學-薪資`[want]
+X106Initial_salary$`研究所及以上-薪資`[want]
+
+#差不多跟我想的一樣
+#128->1700 #72->2000 #130->-300
+#感覺差不了多少，可是有沒有念研究所還是有差的，能多學一點是一點，哪知道何時會用上呢?!競爭力也能上升~!
 ```
 
 ### 這些職業別研究所薪資與大學薪資差多少呢？

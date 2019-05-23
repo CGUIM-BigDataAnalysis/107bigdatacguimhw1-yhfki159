@@ -70,9 +70,13 @@ salaryRateTop10<-head(salaryRate_arrange,10)#前十大
 View(salaryRateTop10)#view
 ################################################
 #選職業別#用106分析
+X106Initial_salary <- read_csv("A17000000J-020066-Qod/106Initial salary.csv")
+View(X106Initial_salary)#view
 #128	藝術_娛樂及休閒服務業-專業人員 #72 	住宿及餐飲業-專業人員 #130 藝術_娛樂及休閒服務業-事務支援人員
-X106Initial_salary$`研究所及以上-薪資`
-X106Initial_salary$`大學-薪資`
+want<-c(128,72,130)
+X106Initial_salary$大職業別
+X106Initial_salary$`大學-薪資`[want]
+X106Initial_salary$`研究所及以上-薪資`[want]
 
 #差不多跟我想的一樣
 #128->1700 #72->2000 #130->-300

@@ -7,13 +7,13 @@
     "folds" : "",
     "hash" : "0",
     "id" : "52DC4F5A",
-    "lastKnownWriteTime" : 1558579936,
-    "last_content_update" : 1558579936045,
+    "lastKnownWriteTime" : 1558583000,
+    "last_content_update" : 1558583000036,
     "path" : "~/GitHub/107bigdatacguimhw1-yhfki159/DataAnalysis.R",
     "project_path" : "DataAnalysis.R",
     "properties" : {
-        "cursorPosition" : "37,0",
-        "scrollLine" : "24"
+        "cursorPosition" : "82,53",
+        "scrollLine" : "59"
     },
     "relative_order" : 1,
     "source_on_save" : false,
