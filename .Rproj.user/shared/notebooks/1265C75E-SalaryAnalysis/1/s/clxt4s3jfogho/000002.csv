@@ -1,0 +1,85 @@
+"0","#è¼‰å…¥package"
+"0","library(jsonlite)"
+"0","library(dplyr)"
+"0","library(readr)"
+"0","#read"
+"0","X103Initial_salary <- read_csv(""A17000000J-020066-Qod/103Initial salary.csv"")"
+"2","Parsed with column specification:
+cols(
+  ¦~«× = [32mcol_double()[39m,
+  ¤jÂ¾·~§O = [31mcol_character()[39m,
+  `¸g±`©ÊÁ~¸ê-Á~¸ê` = [32mcol_double()[39m,
+  `¸g±`©ÊÁ~¸ê-¤k/¨k` = [32mcol_double()[39m,
+  `°ê¤¤¤Î¥H¤U-Á~¸ê` = [31mcol_character()[39m,
+  `°ê¤¤¤Î¥H¤U-¤k/¨k` = [31mcol_character()[39m,
+  `°ª¤¤©Î°ªÂ¾-Á~¸ê` = [31mcol_character()[39m,
+  `°ª¤¤©Î°ªÂ¾-¤k/¨k` = [31mcol_character()[39m,
+  `±M¬ì-Á~¸ê` = [31mcol_character()[39m,
+  `±M¬ì-¤k/¨k` = [31mcol_character()[39m,
+  `¤j¾Ç-Á~¸ê` = [31mcol_character()[39m,
+  `¤j¾Ç-¤k/¨k` = [31mcol_character()[39m,
+  `¬ã¨s©Ò¤Î¥H¤W-Á~¸ê` = [31mcol_character()[39m,
+  `¬ã¨s©Ò¤Î¥H¤W-¤k/¨k` = [31mcol_character()[39m
+)
+"
+"0","View(X103Initial_salary)#view"
+"0","X104Initial_salary <- read_csv(""A17000000J-020066-Qod/104Initial salary.csv"")"
+"2","Parsed with column specification:
+cols(
+  ¦~«× = [32mcol_double()[39m,
+  ¤jÂ¾·~§O = [31mcol_character()[39m,
+  `¸g±`©ÊÁ~¸ê-Á~¸ê` = [32mcol_double()[39m,
+  `¸g±`©ÊÁ~¸ê-¤k/¨k` = [31mcol_character()[39m,
+  `°ê¤¤¤Î¥H¤U-Á~¸ê` = [31mcol_character()[39m,
+  `°ê¤¤¤Î¥H¤U-¤k/¨k` = [31mcol_character()[39m,
+  `°ª¤¤©Î°ªÂ¾-Á~¸ê` = [31mcol_character()[39m,
+  `°ª¤¤©Î°ªÂ¾-¤k/¨k` = [31mcol_character()[39m,
+  `±M¬ì-Á~¸ê` = [31mcol_character()[39m,
+  `±M¬ì-¤k/¨k` = [31mcol_character()[39m,
+  `¤j¾Ç-Á~¸ê` = [31mcol_character()[39m,
+  `¤j¾Ç-¤k/¨k` = [31mcol_character()[39m,
+  `¬ã¨s©Ò¤Î¥H¤W-Á~¸ê` = [31mcol_character()[39m,
+  `¬ã¨s©Ò¤Î¥H¤W-¤k/¨k` = [31mcol_character()[39m
+)
+"
+"0","View(X104Initial_salary)#view"
+"0","X105Initial_salary <- read_csv(""A17000000J-020066-Qod/105Initial salary.csv"")"
+"2","Parsed with column specification:
+cols(
+  ¦~«× = [32mcol_double()[39m,
+  ¤jÂ¾·~§O = [31mcol_character()[39m,
+  `¸g±`©ÊÁ~¸ê-Á~¸ê` = [32mcol_double()[39m,
+  `¸g±`©ÊÁ~¸ê-¤k/¨k` = [31mcol_character()[39m,
+  `°ê¤¤¤Î¥H¤U-Á~¸ê` = [31mcol_character()[39m,
+  `°ê¤¤¤Î¥H¤U-¤k/¨k` = [31mcol_character()[39m,
+  `°ª¤¤©Î°ªÂ¾-Á~¸ê` = [31mcol_character()[39m,
+  `°ª¤¤©Î°ªÂ¾-¤k/¨k` = [31mcol_character()[39m,
+  `±M¬ì-Á~¸ê` = [31mcol_character()[39m,
+  `±M¬ì-¤k/¨k` = [31mcol_character()[39m,
+  `¤j¾Ç-Á~¸ê` = [31mcol_character()[39m,
+  `¤j¾Ç-¤k/¨k` = [31mcol_character()[39m,
+  `¬ã¨s©Ò¤Î¥H¤W-Á~¸ê` = [31mcol_character()[39m,
+  `¬ã¨s©Ò¤Î¥H¤W-¤k/¨k` = [31mcol_character()[39m
+)
+"
+"0","View(X105Initial_salary)#view"
+"0","X106Initial_salary <- read_csv(""A17000000J-020066-Qod/106Initial salary.csv"")"
+"2","Parsed with column specification:
+cols(
+  ¦~«× = [32mcol_double()[39m,
+  ¤jÂ¾·~§O = [31mcol_character()[39m,
+  `¸g±`©ÊÁ~¸ê-Á~¸ê` = [32mcol_double()[39m,
+  `¸g±`©ÊÁ~¸ê-¤k/¨k` = [31mcol_character()[39m,
+  `°ê¤¤¤Î¥H¤U-Á~¸ê` = [31mcol_character()[39m,
+  `°ê¤¤¤Î¥H¤U-¤k/¨k` = [31mcol_character()[39m,
+  `°ª¤¤©Î°ªÂ¾-Á~¸ê` = [31mcol_character()[39m,
+  `°ª¤¤©Î°ªÂ¾-¤k/¨k` = [31mcol_character()[39m,
+  `±M¬ì-Á~¸ê` = [31mcol_character()[39m,
+  `±M¬ì-¤k/¨k` = [31mcol_character()[39m,
+  `¤j¾Ç-Á~¸ê` = [31mcol_character()[39m,
+  `¤j¾Ç-¤k/¨k` = [31mcol_character()[39m,
+  `¬ã¨s©Ò¤Î¥H¤W-Á~¸ê` = [31mcol_character()[39m,
+  `¬ã¨s©Ò¤Î¥H¤W-¤k/¨k` = [31mcol_character()[39m
+)
+"
+"0","View(X106Initial_salary)#view"
